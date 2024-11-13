@@ -130,10 +130,14 @@
 .emotehi {
 		position: fixed; /* Fix pozíció a lap bal oldalán */
     bottom: 70px; /* Közvetlenül a footer fölött helyezkedik el */
-    left: 0px; /* Bal oldali elhelyezkedés */
+    left: -40px; /* Bal oldali elhelyezkedés */
     z-index: 110; /* A footer fölött jelenjen meg */
-    width: 100px; /* Fix szélesség a képnek */
-    height: auto; /* Arányosan méretezze a magasságot */
+		}
+		.emoteright {
+		position: fixed; /* Fix pozíció a lap bal oldalán */
+    bottom: 70px; /* Közvetlenül a footer fölött helyezkedik el */
+    right: -33px; /* Bal oldali elhelyezkedés */
+    z-index: 110; /* A footer fölött jelenjen meg */
 		}
 		
 		footer {
@@ -143,6 +147,7 @@
     width: 100%; /* Teljes szélességet elfoglalja */
     z-index: 100; /* Mindig a többi tartalom felett jelenjen meg */
 }
+
 
 footer .footer-links {
     background-color: rgba(0, 0, 0, 0.8); /* Átlátszó fekete háttér */
@@ -190,7 +195,10 @@ footer .footer-copyright {
         
     </header>
 	<div class="emotehi">
-	<img src="natasahi.png" alt="NatasaHi">
+	<img src="emote_hi.png" alt="NatasaHi" width="200" height="auto">
+	</div>
+	<div class="emoteright">
+	<img src="emote_lurk.png" alt="NatasaLurk" width="200" height="auto">
 	</div>
 	</div>
     <section>

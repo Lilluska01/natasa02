@@ -215,10 +215,14 @@
 		.emotehi {
 		position: fixed; /* Fix pozíció a lap bal oldalán */
     bottom: 70px; /* Közvetlenül a footer fölött helyezkedik el */
-    left: 0px; /* Bal oldali elhelyezkedés */
+    left: -40px; /* Bal oldali elhelyezkedés */
     z-index: 110; /* A footer fölött jelenjen meg */
-    width: 100px; /* Fix szélesség a képnek */
-    height: auto; /* Arányosan méretezze a magasságot */
+		}
+		.emoteright {
+		position: fixed; /* Fix pozíció a lap bal oldalán */
+    bottom: 70px; /* Közvetlenül a footer fölött helyezkedik el */
+    right: -33px; /* Bal oldali elhelyezkedés */
+    z-index: 110; /* A footer fölött jelenjen meg */
 		}
 		
 		footer {
@@ -261,7 +265,29 @@ footer .footer-copyright {
     color: #fff; /* Fehér szöveg */
     padding: 5px 0; /* Függőleges margó */
 }
-		
+		 .iframe-container {
+        position: relative;
+        width: 400px; /* Szélesség az iframe-hez */
+        margin-bottom: 20px; /* Távolság az alatta lévő elemtől */
+    }
+.moderator-icon {
+    position: absolute; /* Pozíció közvetlenül a sidebars-container mellé */
+    top: 13%; /* Függőleges elhelyezkedés */
+    right: 20px; /* Kép távolsága a jobb oldaltól */
+    transform: translateY(-50%); /* Középre igazítás a container magasságához */
+   
+}
+
+.moderator-icon img {
+    width: 60px; /* A kép szélessége */
+    height: auto; /* Magasság arányosan méretezve */
+    transition: transform 0.2s ease-in-out;
+}
+
+.moderator-icon img:hover {
+    transform: scale(1.1); /* Hover animáció */
+}
+
     </style>
 </head>
 <body>
@@ -274,9 +300,18 @@ footer .footer-copyright {
     <header>
         Üdvözöllek a natasa02 Twitch csatorna oldalán!
     </header>
+	<div class="moderator-icon">
+    <a href="https://www.twitch.tv/popout/moderator/natasa02/active-mods?id=6" target="_blank" title="Moderátorok Listája">
+        <img src="moderatorok.png" alt="Moderátorok">
+    </a>
+</div>
+
 	</div>
 	<div class="emotehi">
-	<img src="natasahi.png" alt="NatasaHi">
+	<img src="emote_hi.png" alt="NatasaHi" width="200" height="auto">
+	</div>
+	<div class="emoteright">
+	<img src="emote_lurk.png" alt="NatasaLurk" width="200" height="auto">
 	</div>
     <nav>
         <a href="menetrend.html"> <img src="menetrend.png" alt="Menetrend"></a>

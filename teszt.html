@@ -212,6 +212,21 @@
                 transform: translateX(1);
             }
         }
+	    /* Mobilnézet: 768px vagy kisebb képernyőkre */
+@media screen and (max-width: 768px) {
+    .emotehi {
+        width: 70px; /* Kisebb szélesség telefonon */
+        bottom: 50px; /* Alacsonyabb pozíció */
+    }
+}
+
+/* Extra kicsi eszközökre: 480px vagy kisebb */
+@media screen and (max-width: 480px) {
+    .emotehi {
+        width: 50px; /* Még kisebb szélesség */
+        bottom: 40px; /* Tovább igazítva az alsó margót */
+    }
+}
 		.emotehi {
 		position: fixed; /* Fix pozíció a lap bal oldalán */
     bottom: 70px; /* Közvetlenül a footer fölött helyezkedik el */

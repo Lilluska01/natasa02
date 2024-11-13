@@ -147,26 +147,53 @@
 }
 .emotehi {
 		position: fixed; /* Fix pozíció a lap bal oldalán */
-    bottom: 65px; /* Közvetlenül a footer fölött helyezkedik el */
+    bottom: 70px; /* Közvetlenül a footer fölött helyezkedik el */
     left: 0px; /* Bal oldali elhelyezkedés */
     z-index: 110; /* A footer fölött jelenjen meg */
     width: 100px; /* Fix szélesség a képnek */
     height: auto; /* Arányosan méretezze a magasságot */
-		
 		}
-footer {
-             text-align: center;
-    font-size: 12px;
-    color: rgb(0,0,0);
-    position: fixed; /* Rögzítve az oldal aljához */
-    bottom: 0; /* Az oldal aljára helyezve */
-    left: 0; /* Az oldal bal széléhez igazítva */
-    width: 100%; /* A teljes szélességet elfoglalja */
-    background-color: rgba(0, 0, 0, 0.8); /* Opcionális háttérszín */
-    padding: 10px 0; /* Függőleges margó a szöveg körül */
-    z-index: 100; /* Mindig látható maradjon a tartalom fölött */
-	height: 50px; /* Fix magasság */
-        }
+		
+		footer {
+    position: fixed; /* A footer rögzítve marad az oldal alján */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Teljes szélességet elfoglalja */
+    z-index: 100; /* Mindig a többi tartalom felett jelenjen meg */
+}
+
+footer .footer-links {
+    background-color: rgba(0, 0, 0, 0.8); /* Átlátszó fekete háttér */
+    padding: 0; /* Csökkentett függőleges margó */
+    text-align: center; /* Képek középre igazítása */
+}
+
+footer .footer-links .socials {
+    display: inline-block; /* Az ikonok egy sorban maradjanak */
+}
+
+footer .footer-links a {
+    display: inline-block;
+    margin: 0 10px; /* Távolság az ikonok között */
+}
+
+footer .footer-links a img {
+    max-width: 40px; /* Kép méretének biztosítása */
+    vertical-align: middle; /* Képek igazítása szövegsorral */
+    transition: transform 0.2s ease-in-out;
+}
+
+footer .footer-links a img:hover {
+    transform: scale(1.1); /* Hover effektus */
+}
+
+footer .footer-copyright {
+    background-color: #000; /* Tömör fekete háttér */
+    text-align: center; /* Szöveg középre igazítása */
+    font-size: 12px; /* Szöveg mérete */
+    color: #fff; /* Fehér szöveg */
+    padding: 5px 0; /* Függőleges margó */
+}
     </style>
 </head>
 <body>
@@ -236,16 +263,24 @@ footer {
 	<img src="natasahi.png" alt="NatasaHi">
 	</div>
 	<footer>
-	<div class="socials">
-<p><a href="https://www.instagram.com/nnatasa02/" target="_blank">
-            <img src="instagram.png" alt="Instagram"></a>
-			<a href="https://www.twitch.tv/natasa02" target="_blank">
-            <img src="twitch.png" alt="Twitch"></a>
-			<a href="https://x.com/nnatasa02" target="_blank">
-            <img src="twitter.png" alt="X"></a>
-</p>
-</div>
-    Minden jog fenntartva © 2024 Lillus
+    <div class="footer-links">
+        <div class="socials">
+            <p>
+                <a href="https://www.instagram.com/nnatasa02/" target="_blank">
+                    <img src="instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.twitch.tv/natasa02" target="_blank">
+                    <img src="twitch.png" alt="Twitch">
+                </a>
+                <a href="https://x.com/nnatasa02" target="_blank">
+                    <img src="twitter.png" alt="X">
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        Minden jog fenntartva © 2024 Lillus
+    </div>
 </footer>
 </body>
 </html>

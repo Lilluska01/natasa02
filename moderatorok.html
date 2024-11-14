@@ -2,9 +2,21 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Névjegy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Moderátorok</title>
     <style>
+	section {
+	text-align: center;
+            color: #fff;
+			font-family: Comic Sans MS;
+	}
+	.warning {
+	text-align: center;
+            color: red;
+			font-weight: bold;
+			font-family: Comic Sans MS;
+	}
 	h1 {
 		margin-top: 0%;
 	}
@@ -12,8 +24,8 @@
             text-align: center;
             color: #fff;
             font-weight: bold;
-            font-size: 25px;
-            font-family: Segoe-UI-black;
+            font-size: 20px;
+            font-family: Comic Sans MS;
             background: rgb(0,0,0);
             animation: gradient 15s ease infinite, slideIn 1.5s ease-out forwards;
             padding: 10px 0;  
@@ -59,9 +71,10 @@
 			animation: gradient 15s ease infinite;
 			background-size: 400% 400%;
 			background-attachment: fixed;
+			
         }
         a img {
-            
+            margin: 20px 0;
             max-width: 100px; 
             transition: transform 0.2s ease-in-out;
         }
@@ -181,6 +194,67 @@ footer .footer-copyright {
     color: #fff; /* Fehér szöveg */
     padding: 5px 0; /* Függőleges margó */
 }
+ .list-container {
+    display: grid; /* Két oszlop egymás mellé helyezése */
+    justify-content: center; /* Vízszintesen középre igazítás */
+    gap: 50px; /* Távolság a két oszlop között */
+    
+    height: 100vh; /* Teljes képernyő magasság */
+    margin: 0; /* Margin eltávolítása */
+}
+
+        .list-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 oszlop */
+    gap: 20px; /* Távolság a névblokkok között */
+    justify-content: center;
+    margin: 250px;
+	margin-top: 50px;
+    max-width: 100%; /* Az oldal szélességétől függ */
+}
+
+.list-item {
+    background-color: rgba(255, 255, 255, 0.1); /* Finom háttérszín */
+    padding: 10px;
+    border-radius: 8px;
+    font-family: Comic Sans MS;
+    color: purple;
+    font-weight: bold;
+    text-align: center;
+    width: 200px; /* Fix szélesség */
+    height: 250px; /* Fix magasság */
+    display: flex;
+    flex-direction: column; /* A kép és a szöveg egymás alatt helyezkedjen el */
+    align-items: center; /* Középre igazítás vízszintesen */
+    justify-content: center; /* Középre igazítás függőlegesen */
+}
+
+.list-item img {
+    width: 150px; /* Fix szélesség a képekhez */
+    height: 150px; /* Fix magasság a képekhez */
+    object-fit: cover; /* A kép kivágása a helyes arányokkal */
+    margin-bottom: 10px; /* Távolság a név és a kép között */
+	
+}
+.back-button-container {
+    display: flex; /* Rugalmas konténer a középre igazításhoz */
+    justify-content: center; /* Vízszintesen középre igazítás */
+    margin-top: 550px; /* Távolság a tartalom aljától */
+	margin-bottom: 100px; /* Távolság a tartalom aljától */
+	
+}
+
+.back-button img {
+    max-width: 100px; /* Gomb méretének beállítása */
+    height: auto; /* Automatikus arányos méretezés */
+    transition: transform 0.2s ease-in-out; /* Hover-effektus */
+	margin: 0;
+}
+
+.back-button img:hover {
+    transform: scale(1.1); /* Hover-effektus */
+}
+
     </style>
 </head>
 <body>
@@ -191,9 +265,10 @@ footer .footer-copyright {
   </div>
   <div>
     <header>
-        <h1>Névjegy</h1>
+        <h1>Moderátor Lista</h1>
         
     </header>
+	 
 	<div class="emotehi">
 	<img src="emote_hi.png" alt="NatasaHi" width="200" height="auto">
 	</div>
@@ -202,12 +277,44 @@ footer .footer-copyright {
 	</div>
 	</div>
     <section>
-        <p>Sziasztok! A nevem Natasa (Nati), és a Twitch csatornámon játékokat, beszélgetéseket és sok érdekességet találhattok.</p>
-        <p>Ha kérdésetek van, írjatok nyugodtan a chatben, vagy küldjetek üzenetet!</p>
-    </section>
-	<a href="teszt.html">
+        Itt láthatod a jelenlegi Twitch moderátorokat. Ha bármi kérdésed van, vagy problémád, akkor hozzájuk <u>IS</u> nyugodtan fordulhatsz!
+	</section>
+	<div class="warning">
+		<p>Ez a lista nem mindig naprakész!</p>
+    </div>
+	 <div class="list-container">
+        <div class="list-item"><img src="pl1.png" alt="ExoSavals"><p>ExoSavals</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>arabellapatriciabieber33</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>Lilluskaa01</p></div>
+		<div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>lcdFFF_</p></div>
+		<div class="list-item"><img src="csanicsanad.png" alt="ExoSavals"><p>csanicsanad</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>cs_UpBeat</p></div>
+        <div class="list-item"><img src="deryck.png" alt="ExoSavals"><p>deryckval</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>zaviika1337</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>CsaladiPotl3k</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>kinyal121</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>OnlyRisu</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>ArthasB</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>syrax21</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>aGERIvagyok</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>rostix96</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>sporkhatsoda</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>Loach_The_One</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>dokruteny</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>grizzly12121</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>szityin</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>Schinobuu</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>FourthwallHQ</p></div>
+        <div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>knolkitaaaa</p></div>
+		<div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>deave555</p></div>
+		<div class="list-item"><img src="pelda.png" alt="ExoSavals"><p>cannibalcandy01</p></div>
+    </div>
+    
+	<div class="back-button-container">
+    <a href="teszt.html" class="back-button">
         <img src="vissza.png" alt="Vissza a főoldalra">
     </a>
+	</div>
 	<footer>
     <div class="footer-links">
         <div class="socials">

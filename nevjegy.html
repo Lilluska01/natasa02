@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Névjegy</title>
     <style>
+	.image-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0; /* Távolság a többi tartalomtól */
+        }
+
+        .image-container img {
+            max-width: 600px; /* A kép maximális szélessége */
+            width: 100%; /* A kép teljes szélességben kitölti a container-t */
+            height: auto; /* Automatikus magasság az arányok megőrzéséhez */
+            border-radius: 10px; /* Kicsit lekerekített sarkok */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Árnyék a kép alá */
+            
+        }
+
+        
 	h1 {
 		margin-top: 0%;
 	}
@@ -181,6 +197,24 @@ footer .footer-copyright {
     color: #fff; /* Fehér szöveg */
     padding: 5px 0; /* Függőleges margó */
 }
+.back-button-container {
+    display: flex; /* Rugalmas konténer a középre igazításhoz */
+    justify-content: center; /* Vízszintesen középre igazítás */
+    margin-top: 100px; /* Távolság a tartalom aljától */
+	margin-bottom: 100px; /* Távolság a tartalom aljától */
+	
+}
+
+.back-button img {
+    max-width: 100px; /* Gomb méretének beállítása */
+    height: auto; /* Automatikus arányos méretezés */
+    transition: transform 0.2s ease-in-out; /* Hover-effektus */
+	margin: 0;
+}
+
+.back-button img:hover {
+    transform: scale(1.1); /* Hover-effektus */
+}
     </style>
 </head>
 <body>
@@ -205,9 +239,16 @@ footer .footer-copyright {
         <p>Sziasztok! A nevem Natasa (Nati), és a Twitch csatornámon játékokat, beszélgetéseket és sok érdekességet találhattok.</p>
         <p>Ha kérdésetek van, írjatok nyugodtan a chatben, vagy küldjetek üzenetet!</p>
     </section>
-	<a href="teszt.html">
-        <img src="vissza.png" alt="Vissza a főoldalra">
+	
+	<div class="image-container">
+    <img src="nati.png" alt="Natasa">
+	</div>
+
+	<div class="back-button-container">
+    <a href="teszt.html" class="back-button">
+        <img src="vissza2.png" alt="Vissza a főoldalra">
     </a>
+	</div>
 	<footer>
     <div class="footer-links">
         <div class="socials">
@@ -220,6 +261,9 @@ footer .footer-copyright {
                 </a>
                 <a href="https://x.com/nnatasa02" target="_blank">
                     <img src="twitter.png" alt="X">
+                </a>
+				<a href="https://www.tiktok.com/@twitch_natasa02" target="_blank">
+                    <img src="tiktok.png" alt="TikTok">
                 </a>
             </p>
         </div>

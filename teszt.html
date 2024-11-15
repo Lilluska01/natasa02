@@ -5,21 +5,121 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N4s1 Oldala</title>
     <style>
+	.news-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 900px;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+	margin-top: 100px;
+}
+
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.news-header h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #fff;
+}
+
+.news-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab-button {
+    padding: 8px 16px;
+    background-color: #2f2f2f;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button.active {
+    background-color: #000;
+}
+
+.tab-button:hover {
+    background-color: #232323;
+}
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.news-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.news-content {
+    display: flex;
+    background-color: #000;
+    border-radius: 8px;
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
+}
+
+.news-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+}
+
+.news-text h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.news-text p {
+    margin: 5px 0 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.news-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #2f2f2f;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.news-link:hover {
+    background-color: #3c3c3c;
+}
 	 .help-icon-container {
-            position: fixed;
-            top: 50px; /* Footer fölött helyezkedik el */
-            left: 10px; /* Balra igazítva */
-            z-index: 20; /* Mindig látható legyen */
+            position: fixed; /* A kép pozíciója rögzített */
+    top: 50px; /* Távolság az oldal aljától */
+    left: 20px; /* Távolság az oldal bal szélétől */
+    z-index: 200; /* Biztosítsd, hogy a footer fölött jelenjen meg */
         }
 
         .help-icon-container a img {
             width: 20px; /* Kép szélessége */
             height: auto; /* Magasság arányos legyen */
-            transition: transform 0.2s ease-in-out;
+            
         }
 
         .help-icon-container a img:hover {
-            transform: scale(1.1); /* Hover animáció */
+            
         }
 	a img {
             margin-top: 40px;
@@ -100,7 +200,7 @@
             background: linear-gradient(315deg, rgb(0,0,0) 3%, rgb(105,105,105) 38%, rgb(128,128,128) 48%, rgb(169,169,169) 58%);
             color: #fff;
             margin: 0;
-            padding: 0;
+            padding: top;
             overflow: auto;
             animation: gradient 15s ease infinite;
             background-size: 400% 400%;
@@ -329,7 +429,66 @@ footer .footer-copyright {
     color: #000; /* Hover, fókusz és aktív állapotokban is örökölt szín */
     text-decoration: none;
 }
+/* Modal alap stílus */
+.modal {
+    display: none; /* Alapértelmezés szerint rejtett */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal tartalom */
+.modal-content {
+    background-color: #2f2f2f;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    color: #fff;
+}
+
+/* Bezáró gomb */
+.close-button {
+    color: #fff;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
     </style>
+	
+	<script>
+    // Modal megnyitása
+    function openModal() {
+        document.getElementById("modal").style.display = "block";
+    }
+
+    // Modal bezárása
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+
+    // Bezárás, ha a modalon kívül kattintanak
+    window.onclick = function(event) {
+        var modal = document.getElementById("modal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
 </head>
 <body>
 <div>
@@ -341,6 +500,9 @@ footer .footer-copyright {
     <header>
         Üdvözöllek a natasa02 Twitch csatorna oldalán!
     </header>
+	
+</div>
+
 	<div class="moderator-icon">
     <a href="moderatorok.html" title="Moderátorok Listája">
         <img src="moderatorok.png" alt="Moderátorok">
@@ -360,9 +522,47 @@ footer .footer-copyright {
 		<a href="https://natasa02-shop.fourthwall.com" target="_blank"> <img src="webshop.png" alt="Névjegy"></a>
     </nav>
     
+	<div class="news-container">
+    <div class="news-header">
+        <h2>Hírek</h2>
+        <div class="news-tabs">
+            <button class="tab-button active">Közösségi hírek</button>
+            
+        </div>
+    </div>
+    <div class="news-item">
+        <div class="news-date">2024.11.06</div>
+        <div class="news-content">
+            <img src="major.png" alt="R6 Major Montreal" class="news-image">
+            <div class="news-text">
+                <h3>Rainbow Six Siege Major Stream</h3>
+                <p>
+                    Mint sokan tujdátok a héten elindult a Ranbow Six Siege Major. Mint egyetlen magyar co-streamer nálam, tudjátok élőben nézni a streamet, különböző droppokért cserében! Természetesen közben mi is fogunk egy-két ranked meccset nyomni. Nézzetek be! 
+                </p>
+                <a href="#" class="news-link" onclick="openModal()">Tovább olvasom</a>
+
+            </div>
+        </div>
+    </div>
+	</div>
+	
+	<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>Rainbow Six Siege Major Stream</h2>
+        <p>
+            Mint sokan tujdátok a héten elindult a Ranbow Six Siege Major. Mint egyetlen magyar co-streamer nálam, tudjátok élőben nézni a streamet, különböző droppokért cserében! Természetesen közben mi is fogunk egy-két ranked meccset nyomni. Nem minden meccset fogok közvetíteni, de amikor streamelek R6 kategóriában, akkor is lehet droppokat farmolni. Ha szeretnéd követni X-en is az eseményeket, akkor <a href="https://x.com/r6esports?lang=hu" target="_blank">kattints ide</a>.</p>
+			<p><b>Nem tudod hogyan szerezz droppot?</b>
+			<br>Kapcsold össze a twitch és az ubisoft fiókod és gyűjtsd be a jutalmakat amikor kiérdemelted őket</p>
+        
+    </div>
+</div>
+	
     <div class="content">
         <p>Itt találod a csatornával kapcsolatos információkat és menetrendet.</p>
     </div>
+	
+	
 	  <div class="sidebars-container">
         <div class="sidebar">
             <img src="kep1.png" alt="Konfiguráció">

@@ -5,7 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N4s1 Oldala</title>
     <style>
-	
+	 .help-icon-container {
+            position: fixed;
+            top: 50px; /* Footer fölött helyezkedik el */
+            left: 10px; /* Balra igazítva */
+            z-index: 20; /* Mindig látható legyen */
+        }
+
+        .help-icon-container a img {
+            width: 20px; /* Kép szélessége */
+            height: auto; /* Magasság arányos legyen */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .help-icon-container a img:hover {
+            transform: scale(1.1); /* Hover animáció */
+        }
 	a img {
             margin-top: 40px;
             max-width: 200px; 
@@ -15,13 +30,17 @@
         a img:hover {
             transform: scale(1.1); 
         }
+		.a2 {
+		display: block; 
+            width: fit-content; 
+            margin: 0 auto; 
+		}
         .a2 img {
-            margin: 50px 0;
             max-width: 500px; 
             transition: transform 0.2s ease-in-out;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+			margin-top:0;
+			margin-bottom: 100px;
+			
         }
         .a2 img:hover {
             transform: scale(1.1); 
@@ -288,6 +307,28 @@ footer .footer-copyright {
     transform: scale(1.1); /* Hover animáció */
 }
 
+.footer-x {
+    position: absolute; /* Fix pozíció a bal oldalhoz igazítva */
+    bottom: 10px; /* A footer alsó részéhez igazítva */
+    left: 10px; /* Margin a bal oldaltól */
+}
+
+.footer-x-icon {
+    width: 30px; /* Ikon szélessége */
+    height: auto; /* Magasság automatikus az arányok megőrzéséhez */
+    transition: none; /* Nincs hover vagy interakció effektus */
+}
+
+.footer-x a {
+    text-decoration: none; /* Nincs aláhúzás */
+    color: inherit; /* Alap színt örökölje, sose változzon */
+	color: #000;
+}
+
+.footer-x a:hover, .footer-x a:focus, .footer-x a:active {
+    color: #000; /* Hover, fókusz és aktív állapotokban is örökölt szín */
+    text-decoration: none;
+}
     </style>
 </head>
 <body>
@@ -316,6 +357,7 @@ footer .footer-copyright {
     <nav>
         <a href="menetrend.html"> <img src="menetrend2.png" alt="Menetrend"></a>
 		<a href="nevjegy.html" > <img src="névjegy2.png" alt="Névjegy"></a>
+		<a href="https://natasa02-shop.fourthwall.com" target="_blank"> <img src="webshop.png" alt="Névjegy"></a>
     </nav>
     
     <div class="content">
@@ -390,11 +432,15 @@ footer .footer-copyright {
 	</div>
 	<div class="a2">
 	<a href="https://www.twitch.tv/popout/natasa02/extensions/grhpdp2owc0kzdn0djjsghlfk4ld4v/panel" target="_blank">
-                <img src="badgek.png" alt="Discord"></a>
-				</div>
+                <img src="badgek.png" alt="Badgek"></a>
+	</div>
 
 
-
+<div class="help-icon-container">
+        <a href="help.html" title="Segítség">
+            <img src="help.png" alt="Help">
+        </a>
+    </div>
 
 <footer>
     <div class="footer-links">
@@ -418,6 +464,11 @@ footer .footer-copyright {
     <div class="footer-copyright">
         Minden jog fenntartva © 2024 Lillus
     </div>
+	<div class="footer-x">
+    <a href="tits.html" >
+        x
+    </a>
+</div>
 </footer>
 </body>
 </html>

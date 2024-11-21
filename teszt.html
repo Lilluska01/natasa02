@@ -5,22 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N4s1 Oldala</title>
     <style>
+	body.no-scroll {
+    overflow: hidden;
+}
+
 	.news-container {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 8px;
-    margin: 20px auto;
+    margin: 20px auto 40px;
     max-width: 900px;
     color: #fff;
     font-family: 'Segoe UI', sans-serif;
 	margin-top: 100px;
+	 position: relative;
+	 z-index: 1;
+	 
 }
 
 .news-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
 }
 
 .news-header h2 {
@@ -57,6 +64,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+	margin-bottom: 20px;
 }
 
 .news-date {
@@ -231,6 +239,8 @@
             justify-content: center;
             gap: 20px;
             margin: 50px 20px;
+			position: relative; /* Pozíció fixálása a modal alatt */
+    z-index: 1; /* Alacsonyabb szint, hogy a modal ne keveredjen vele */
         }
         .sidebar {
             background-color: rgba(0, 0, 0, 0.7);
@@ -431,16 +441,18 @@ footer .footer-copyright {
 }
 /* Modal alap stílus */
 .modal {
-    display: none; /* Alapértelmezés szerint rejtett */
+   display: none;
     position: fixed;
-    z-index: 2000;
+    z-index: 10000; /* Modal legfelül lesz */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Háttér átlátszó fekete */
 }
+
+
 
 /* Modal tartalom */
 .modal-content {
@@ -471,23 +483,33 @@ footer .footer-copyright {
     </style>
 	
 	<script>
-    // Modal megnyitása
-    function openModal() {
-        document.getElementById("modal").style.display = "block";
-    }
+    function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
 
-    // Modal bezárása
-    function closeModal() {
-        document.getElementById("modal").style.display = "none";
-    }
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
 
-    // Bezárás, ha a modalon kívül kattintanak
-    window.onclick = function(event) {
-        var modal = document.getElementById("modal");
-        if (event.target == modal) {
-            modal.style.display = "none";
+window.onclick = function(event) {
+    var modals = document.getElementsByClassName('modal');
+    for (var i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            modals[i].style.display = "none";
         }
-    };
+    }
+};
+
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+    document.body.classList.add("no-scroll");
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+    document.body.classList.remove("no-scroll");
+}
+
 </script>
 </head>
 <body>
@@ -527,40 +549,67 @@ footer .footer-copyright {
         <h2>Hírek</h2>
         <div class="news-tabs">
             <button class="tab-button active">Közösségi hírek</button>
-            
         </div>
     </div>
     <div class="news-item">
+        <div class="news-date">2024.11.21</div>
+        <div class="news-content">
+            <img src="charity.jpg" alt="Charity" class="news-image">
+            <div class="news-text">
+                <h2>Charity Stream</h2>
+                <p>Már nagyon sokszor megrendezésre került nálam a charity stream, és ez idén sem lesz másképp. Előreláthatólak december 20 körül lesz megtartva a stream, hisz ez egy karácsonyi jótékonyság. Ha szeretnétek segíteni másoknak, akkor csatlakozzatok hozzám a stream időpontjában.</p>
+                <a href="#" class="news-link" onclick="openModal('modal1')">Tovább olvasom</a>
+            </div>
+        </div>
+    </div>
+    <div class="news-item">
+        <div class="news-date">2024.11.21</div>
+        <div class="news-content">
+            <img src="donathon.png" alt="Donathon" class="news-image">
+            <div class="news-text">
+                <h3>Névnapi Donathon</h3>
+                <p>December 10-én egy különleges streamre lesz sor, hisz a névnapom ünneplése lesz! Donathonozni fogunk, ami annyit jelent, hogy minél több támogatást küldtök (csak a donate számít), annál tovább fog tartani a stream. Várlak benneteket!</p>
+                <a href="#" class="news-link" onclick="openModal('modal2')">Tovább olvasom</a>
+            </div>
+        </div>
+    </div>
+	<div class="news-item">
         <div class="news-date">2024.11.06</div>
         <div class="news-content">
             <img src="major.png" alt="R6 Major Montreal" class="news-image">
             <div class="news-text">
                 <h3>Rainbow Six Siege Major Stream</h3>
-                <p>
-                    Mint sokan tujdátok a héten elindult a Ranbow Six Siege Major. Mint egyetlen magyar co-streamer nálam, tudjátok élőben nézni a streamet, különböző droppokért cserében! Természetesen közben mi is fogunk egy-két ranked meccset nyomni. Nézzetek be! 
-                </p>
-                <a href="#" class="news-link" onclick="openModal()">Tovább olvasom</a>
-
+                <p>Mint sokan tujdátok a héten elindult a Ranbow Six Siege Major. Mint egyetlen magyar co-streamer nálam, tudjátok élőben nézni a streamet, különböző droppokért cserében! Természetesen közben mi is fogunk egy-két ranked meccset nyomni. Nézzetek be! </p>
+                <a href="#" class="news-link" onclick="openModal('modal3')">Tovább olvasom</a>
             </div>
         </div>
     </div>
-	</div>
-	
-	<div id="modal" class="modal">
+</div>
+<div id="modal1" class="modal">
     <div class="modal-content">
-        <span class="close-button" onclick="closeModal()">&times;</span>
-        <h2>Rainbow Six Siege Major Stream</h2>
-        <p>
-            Mint sokan tujdátok a héten elindult a Ranbow Six Siege Major. Mint egyetlen magyar co-streamer nálam, tudjátok élőben nézni a streamet, különböző droppokért cserében! Természetesen közben mi is fogunk egy-két ranked meccset nyomni. Nem minden meccset fogok közvetíteni, de amikor streamelek R6 kategóriában, akkor is lehet droppokat farmolni. Ha szeretnéd követni X-en is az eseményeket, akkor <a href="https://x.com/r6esports?lang=hu" target="_blank">kattints ide</a>.</p>
-			<p><b>Nem tudod hogyan szerezz droppot?</b>
-			<br>Kapcsold össze a twitch és az ubisoft fiókod és gyűjtsd be a jutalmakat amikor kiérdemelted őket</p>
-        
+        <span class="close-button" onclick="closeModal('modal1')">&times;</span>
+        <h2>Charity stream</h2>
+         <p>Már nagyon sokszor megrendezésre került nálam a charity stream, és ez idén sem lesz másképp. Előreláthatólak december 20 körül lesz megtartva a stream, hisz ez egy karácsonyi jótékonyság. Ha szeretnétek segíteni másoknak, akkor csatlakozzatok hozzám a stream időpontjában. Szokás szerint a Miskolci Állatsegítő Alapítványnak tervezem az összeget elküldeni elsődlegesen. Az elkövetkezendő pár napban mindenki értesülni fog a részletekről valamilyen formában. </p>
     </div>
 </div>
-	
-    <div class="content">
-        <p>Itt találod a csatornával kapcsolatos információkat és menetrendet.</p>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('modal2')">&times;</span>
+        <h2>Névnapi Donathon</h2>
+        <p>December 10-én egy különleges streamre lesz sor, hisz a névnapom ünneplése lesz! Donathonozni fogunk, ami annyit jelent, hogy minél több támogatást küldtök (csak a donate számít), annál tovább fog tartani a stream. Bővebb információról a discord szerveren tudsz majd olvasni, illete a stream időpontjában a !donathon paranccsal megtudtok majd mindent.</p>
     </div>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('modal3')">&times;</span>
+        <h2>Rainbow Six Siege Major Stream</h2>
+        <p>Mint sokan tujdátok a héten elindult a Ranbow Six Siege Major. Mint egyetlen magyar co-streamer nálam, tudjátok élőben nézni a streamet, különböző droppokért cserében! Természetesen közben mi is fogunk egy-két ranked meccset nyomni. Nem minden meccset fogok közvetíteni, de amikor streamelek R6 kategóriában, akkor is lehet droppokat farmolni. Ha szeretnéd követni X-en is az eseményeket, akkor <a href="https://x.com/r6esports?lang=hu" target="_blank">kattints ide</a>.</p>
+			<p><b>Nem tudod hogyan szerezz droppot?</b>
+			<br>Kapcsold össze a twitch és az ubisoft fiókod és gyűjtsd be a jutalmakat amikor kiérdemelted őket</p>
+    </div>
+</div>
 	
 	
 	  <div class="sidebars-container">

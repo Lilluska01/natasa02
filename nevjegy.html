@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Névjegy</title>
+    <style>
+	.image-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0; /* Távolság a többi tartalomtól */
+        }
+
+        .image-container img {
+            max-width: 600px; /* A kép maximális szélessége */
+            width: 100%; /* A kép teljes szélességben kitölti a container-t */
+            height: auto; /* Automatikus magasság az arányok megőrzéséhez */
+            border-radius: 10px; /* Kicsit lekerekített sarkok */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Árnyék a kép alá */
+            
+        }
+
+        
+	h1 {
+		margin-top: 1%;
+	}
+	header {
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 25px;
+            font-family: Comic Sans MS;
+            background: rgb(0,0,0);
+            animation: gradient 15s ease infinite, slideIn 1.5s ease-out forwards;
+            padding: 10px 0;  
+            position: fixed;
+            top: -80px;
+            width: 100%;
+			height: 7%;
+            z-index: 100;
+			 display: flex;
+			justify-content: center; 
+			align-items: center; 
+			overflow: hidden;
+        }
+        .socials img {
+            margin:-15px 0;
+            max-width: 85px; 
+            transition: transform 0.2s ease-in-out;
+            
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .socials img:hover {
+            transform: scale(1.1); 
+        }
+        @keyframes slideIn {
+            0% {
+                top: -80px; /* Kezdetben a képernyő tetején kívül */
+            }
+            100% {
+                top: 0; /* A helyére kerül */
+            }
+        }
+        body {
+		font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(315deg, rgb(0,0,0) 3%, rgb(105,105,105) 38%, rgb(128,128,128) 48%, rgb(169,169,169) 58%);
+            padding: 0;
+			margin-top: 8%;
+			margin-left:0;
+			background: linear-gradient(315deg, rgb(0,0,0) 3%, rgb(105,105,105) 38%, rgb(128,128,128) 68%, rgb(169,169,169) 98%);
+            color: #fff;
+            text-align: center;
+			overflow: auto;
+			animation: gradient 15s ease infinite;
+			background-size: 400% 400%;
+			background-attachment: fixed;
+        }
+        a img {
+            
+            max-width: 100px; 
+            transition: transform 0.2s ease-in-out;
+        }
+        a img:hover {
+            transform: scale(1.1); 
+        }
+		@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+.emotehi {
+		position: fixed; /* Fix pozíció a lap bal oldalán */
+    bottom: 70px; /* Közvetlenül a footer fölött helyezkedik el */
+    left: -40px; /* Bal oldali elhelyezkedés */
+    z-index: 110; /* A footer fölött jelenjen meg */
+		}
+		.emoteright {
+		position: fixed; /* Fix pozíció a lap bal oldalán */
+    bottom: 70px; /* Közvetlenül a footer fölött helyezkedik el */
+    right: -33px; /* Bal oldali elhelyezkedés */
+    z-index: 110; /* A footer fölött jelenjen meg */
+		}
+		
+		footer {
+    position: fixed; /* A footer rögzítve marad az oldal alján */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Teljes szélességet elfoglalja */
+    z-index: 100; /* Mindig a többi tartalom felett jelenjen meg */
+}
+
+
+footer .footer-links {
+    background-color: rgba(0, 0, 0, 0.8); /* Átlátszó fekete háttér */
+    padding: 0; /* Csökkentett függőleges margó */
+    text-align: center; /* Képek középre igazítása */
+}
+
+footer .footer-links .socials {
+    display: inline-block; /* Az ikonok egy sorban maradjanak */
+}
+
+footer .footer-links a {
+    display: inline-block;
+    margin: 0 10px; /* Távolság az ikonok között */
+}
+
+footer .footer-links a img {
+    max-width: 40px; /* Kép méretének biztosítása */
+    vertical-align: middle; /* Képek igazítása szövegsorral */
+    transition: transform 0.2s ease-in-out;
+}
+
+footer .footer-links a img:hover {
+    transform: scale(1.1); /* Hover effektus */
+}
+
+footer .footer-copyright {
+    background-color: #000; /* Tömör fekete háttér */
+    text-align: center; /* Szöveg középre igazítása */
+    font-size: 12px; /* Szöveg mérete */
+    color: #fff; /* Fehér szöveg */
+    padding: 5px 0; /* Függőleges margó */
+}
+.back-button-container {
+    display: flex; /* Rugalmas konténer a középre igazításhoz */
+    justify-content: center; /* Vízszintesen középre igazítás */
+    margin-top: 100px; /* Távolság a tartalom aljától */
+	margin-bottom: 100px; /* Távolság a tartalom aljától */
+	
+}
+
+.back-button img {
+    max-width: 100px; /* Gomb méretének beállítása */
+    height: auto; /* Automatikus arányos méretezés */
+    transition: transform 0.2s ease-in-out; /* Hover-effektus */
+	margin: 0;
+}
+
+.back-button img:hover {
+    transform: scale(1.1); /* Hover-effektus */
+}
+    </style>
+</head>
+<body>
+<div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+  </div>
+  <div>
+    <header>
+        <h1>Névjegy</h1>
+        
+    </header>
+	<div class="emotehi">
+	<img src="emote_hi.png" alt="NatasaHi" width="200" height="auto">
+	</div>
+	<div class="emoteright">
+	<img src="emote_lurk.png" alt="NatasaLurk" width="200" height="auto">
+	</div>
+	</div>
+    <section>
+        <p>Sziasztok! A nevem Natasa (Nati), és a Twitch csatornámon játékokat, beszélgetéseket és sok érdekességet találhattok.</p>
+        <p>Ha kérdésetek van, írjatok nyugodtan a chatben, vagy küldjetek üzenetet!</p>
+    </section>
+	
+	<div class="image-container">
+    <img src="Nati.png" alt="Natasa">
+	</div>
+
+	<div class="back-button-container">
+    <a href="teszt.html" class="back-button">
+        <img src="vissza2.png" alt="Vissza a főoldalra">
+    </a>
+	</div>
+	<footer>
+    <div class="footer-links">
+        <div class="socials">
+            <p>
+                <a href="https://www.instagram.com/nnatasa02/" target="_blank">
+                    <img src="instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.twitch.tv/natasa02" target="_blank">
+                    <img src="twitch.png" alt="Twitch">
+                </a>
+                <a href="https://x.com/nnatasa02" target="_blank">
+                    <img src="twitter.png" alt="X">
+                </a>
+				<a href="https://www.tiktok.com/@twitch_natasa02" target="_blank">
+                    <img src="tiktok.png" alt="TikTok">
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        Minden jog fenntartva © 2024 Lillus
+    </div>
+</footer>
+</body>
+</html>
